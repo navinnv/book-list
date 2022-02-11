@@ -1,0 +1,35 @@
+<div *ngIf="cartDatas != ''" class="container">
+    <div class="m-none card header-row row col-md-12">
+        <div class="col-md-4">Book</div>
+        <div class="col-md-2">Price</div>
+        <div class="col-md-2">Total (<mat-icon>currency_rupee</mat-icon>)</div>
+        <div class="col-md-2">Quantity</div>
+        <div class="col-md-2"></div>
+    </div>
+    <div *ngFor="let data of cartDatas">
+        <div class="content" *ngFor="let book of books">
+            <div *ngIf="book.id == data.id" class="card row col-md-12">
+                <div class="col-md-4 text-left">
+                    <img src={{book.img}} alt="" srcset="">
+                    {{book.title}}
+                </div>
+                <div class="col-md-2"> {{data.quantity}} X {{book.price}} </div>
+                <div class="col-md-1"> {{data.total}} </div>
+                <div class="col-md-4 center"> 
+                    <input (blur)="udpate(data.id,$event,book.price)" type="number" value={{data.quantity}}>
+                </div>
+                <div class="col-md-1">
+                    <mat-icon (click)="delete(data.id)" matTooltip="Delete Forever">delete_forever</mat-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="cartDatas == ''" class="container no-data">
+    <mat-icon>add_shopping_cart</mat-icon>
+    <div class="title">Add Books to Cart</div>
+    <div>
+        <button (click)="back()" class="btn">Go Back</button>
+    </div>
+</div>

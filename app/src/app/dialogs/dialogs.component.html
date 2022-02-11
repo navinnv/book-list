@@ -1,0 +1,21 @@
+<div class="card loader" *ngIf="data.reason == 'loader'">
+    <mat-spinner></mat-spinner>
+    <div class="text">{{data.text}}</div>
+</div>
+
+<div class="card loader" *ngIf="data.reason == 'acknowlege'">
+    <mat-icon>{{data.icon}}</mat-icon>
+    <div class="text">{{data.text}}</div>
+    <div class="handler">
+        <button (click)="close()" color="primary" class="btn btn-sm btn-info" mat-raised-button>Close</button>
+    </div>
+</div>
+
+<div class="card confirm" *ngIf="data.reason == 'remove-dialog'">
+    <mat-icon>{{data.icon}}</mat-icon>
+    <div class="text">{{data.text}}</div>
+    <div class="handler">
+        <button (click)="confirm()" color="primary" class="btn btn-sm btn-danger" mat-raised-button>Confirm</button>
+        <button (click)="close()" color="primary" class="btn btn-sm" mat-raised-button>Close</button>
+    </div>
+</div>

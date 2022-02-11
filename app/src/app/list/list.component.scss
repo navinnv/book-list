@@ -1,0 +1,60 @@
+.container{
+  margin: 20px;
+}
+.title-bar{
+  display: flex;
+  justify-content: space-between;
+  p{
+    font-family: 'PT Sans', sans-serif;
+    color: #000;
+    font-size: 18px;
+  }
+  .mat-icon{
+    font-size: 16px;
+    color: #000;
+    opacity: .2;
+    cursor: pointer;
+  }
+  .mat-icon:hover{
+    opacity: 1;
+  }
+}
+
+.row.col-md-12 {
+  padding: 3%;
+  display: flex;
+  overflow: auto;
+
+  .book-card {
+    width: 180px;
+    cursor: pointer;
+    background: transparent;
+
+    img {
+      border-radius: 10px;
+      width: 150px;
+      height: 222px;
+      object-fit: contain;
+    }
+
+    h3 {
+      width: auto;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      font-family: 'Slabo', serif;
+      margin: 0;
+    }
+
+    p{
+      font-family: 'Poppins' sans-serif !important;
+      font-size: 12px;
+      margin: 0;
+      width: auto;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+
+}

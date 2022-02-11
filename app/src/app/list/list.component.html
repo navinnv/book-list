@@ -1,0 +1,52 @@
+<div class="container">
+  <div *ngIf="(recent.length) > 0">
+    <div class="row">
+      <div class="title-bar">
+        <p>Recent Viewed</p>
+        <div>
+          <mat-icon (click)="prev('fantasy')" aria-hidden="false" aria-label="">arrow_back_ios</mat-icon>
+          <mat-icon (click)="next('fantasy')" aria-hidden="false" aria-label="">arrow_forward_ios</mat-icon>
+        </div>
+      </div>
+      <div *ngIf="book_list != ''" class="row col-md-12">
+        <div *ngFor="let book of book_list">
+          <div *ngFor="let rec of recent">
+            <div *ngIf="rec == book.id" (click)="navigate(book.id)" class="book-card col-md-4">
+              <img src={{book.img}} alt="{{book.title}}">
+              <h3 title="{{book.title}}">{{book.title}}</h3>
+              <p>
+                <span>by</span> {{book.author.first_name}} {{book.author.last_name}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="(category.length) > 0">
+    <div *ngFor="let cat of category">
+      <div class="row">
+        <div class="title-bar">
+          <p>{{cat}}</p>
+          <div>
+            <mat-icon (click)="prev('fantasy')" aria-hidden="false" aria-label="">arrow_back_ios</mat-icon>
+            <mat-icon (click)="next('fantasy')" aria-hidden="false" aria-label="">arrow_forward_ios</mat-icon>
+          </div>
+        </div>
+        <div *ngIf="book_list != ''" class="row col-md-12">
+          <div *ngFor="let book of book_list">
+            <div *ngFor="let gen of book.genre">
+              <div *ngIf="gen == cat" (click)="navigate(book.id)" class="book-card col-md-4">
+                <img src={{book.img}} alt="{{book.title}}">
+                <h3 title="{{book.title}}">{{book.title}}</h3>
+                <p>
+                  <span>by</span> {{book.author.first_name}} {{book.author.last_name}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

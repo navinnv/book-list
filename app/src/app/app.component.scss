@@ -1,0 +1,17 @@
+nav {
+  display: flex;
+  background: #313547;
+  color: #fff;
+  justify-content: space-between;
+  padding: 10px 20px;
+  align-items: center;
+
+  ul{
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+      li{
+          margin: 0 10px;
+      }
+  }
+}

@@ -1,0 +1,59 @@
+::ng-deep.mat-dialog-container {
+    background: transparent;
+    box-shadow: none;
+  
+    mat-spinner {
+      circle {
+        stroke-width: 3% !important;
+      }
+    }
+  }
+  
+  .card {
+    padding: 10px;
+    background: #ffffff;
+    width: 260px;
+    height: 260px;
+    justify-content: center;
+    border-radius: 6px;
+    display: grid;
+  
+    .mat-icon {
+      font-size: 100px;
+      margin: 13% 25%;
+    }
+  
+    .text {
+      padding: 10px;
+      font-size: 18px;
+      margin-top: 11%;
+      color: #000;
+      text-align: center;
+    }
+    .handler{
+      margin: auto;
+    }
+    .handler button{
+      margin:auto 10px;
+      font-size: 16px;
+      background: transparent;
+      border: 1px solid #7a440b;
+      color: #7a440b;
+    }
+    button:hover{
+      background-color: #7a440b !important;
+      color: #ffffff !important;
+    }
+  }
+  
+  .loader {
+    mat-spinner {
+      margin-top: 40px;
+      margin: auto;
+    }
+  
+    .mat-icon {
+      color: #7a440b;
+    }
+  }
+  
